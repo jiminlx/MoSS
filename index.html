@@ -38,17 +38,17 @@
           </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              Jimin Lee<sup>1</sup>,</span>
+              <a href="https://jiminlx.github.io/">Jimin Lee</a><sup>1</sup>,</span>
             <span class="author-block">
-              Huiwon Jang<sup>1,2</sup>,</span>
+              <a href="https://huiwon-jang.github.io/">Huiwon Jang</a><sup>1,2</sup>,</span>
             <span class="author-block">
-              Myungkyu Koo<sup>1,2</sup>,
+              <a href="https://myungkyukoo.github.io/">Myungkyu Koo</a><sup>1,2</sup>,
             </span>
             <span class="author-block">
               Jungwoo Park<sup>3</sup>,
             </span>
             <span class="author-block">
-              Jinwoo Shin<sup>1,2</sup>
+              <a href="https://alinlab.kaist.ac.kr/shin.html">Jinwoo Shin</a><sup>1,2</sup>
             </span>
           </div>
 
@@ -62,21 +62,21 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a class="external-link button is-normal is-rounded is-dark" disabled
-                   style="pointer-events: none; opacity: 0.6;">
+                <a href="https://arxiv.org/pdf/2604.23272v1"
+                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper (TBD)</span>
+                  <span>Paper</span>
                 </a>
               </span>
               <span class="link-block">
-                <a class="external-link button is-normal is-rounded is-dark" disabled
-                   style="pointer-events: none; opacity: 0.6;">
+                <a href="https://arxiv.org/abs/2604.23272v1"
+                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv (TBD)</span>
+                  <span>arXiv</span>
                 </a>
               </span>
               <!-- Code Link. -->
@@ -107,7 +107,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            TBD
+            Humans understand and interact with the real world by relying on diverse physical feedback beyond visual perception. Motivated by this, recent approaches attempt to incorporate physical sensory signals into Vision-Language-Action models (VLAs). However, they typically focus on a single type of physical signal, failing to capture the heterogeneous and complementary nature of real-world interactions. In this paper, we propose <span class="dnerf">MoSS</span>, a modular sensory stream framework that adapts VLAs to leverage multiple sensory signals for action prediction. Specifically, we introduce decoupled modality streams that integrate heterogeneous physical signals into the action stream via joint cross-modal self-attention. To enable stable incorporation of new modalities, we adopt a two-stage training scheme that freezes pretrained VLA parameters in the early stage. Furthermore, to better capture contact interaction dynamics, we incorporate an auxiliary task that predicts future physical signals. Through extensive real-world experiments, we demonstrate that MoSS successfully augments VLAs to leverage diverse physical signals (i.e., tactile and torque), integrating multiple signals to achieve synergistic performance gains.
           </p>
         </div>
       </div>
@@ -134,7 +134,15 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>TBD</code></pre>
+    <pre><code>@misc{lee2026moss,
+      title={Modular Sensory Stream for Integrating Physical Feedback in Vision-Language-Action Models},
+      author={Jimin Lee and Huiwon Jang and Myungkyu Koo and Jungwoo Park and Jinwoo Shin},
+      year={2026},
+      eprint={2604.23272},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2604.23272},
+}</code></pre>
   </div>
 </section>
 
