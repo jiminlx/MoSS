@@ -92,9 +92,24 @@
             </div>
 
           </div>
+
+          <div class="tldr">
+            <p>
+              <strong>TL;DR:</strong> <span class="dnerf">MoSS</span> enables Vision-Language-Action models to jointly leverage multiple physical feedback via modular sensory streams, yielding synergistic gains on contact-rich manipulation.
+            </p>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+
+<section class="section overview-section">
+  <div class="container is-max-desktop">
+    <figure class="image overview-image">
+      <img src="./static/images/overview.png" alt="MoSS overview">
+    </figure>
   </div>
 </section>
 
@@ -119,11 +134,158 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Results</h2>
-        <div class="content has-text-centered">
-          <p>TBD</p>
+        <h2 class="title is-3 has-text-centered">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+<strong><span class="dnerf">MoSS</span></strong> is a modular adaptation framework for VLAs that enables scalable integration of multiple physical sensing modalities for contact-rich manipulation. The framework has two core components: (a) <strong>modular sensory streams</strong>, which process each physical signal (e.g., tactile, force, or torque) in parallel and inject them into the pretrained action expert via <strong>joint cross-modal self-attention</strong>, and (b) a <strong>two-stage training scheme</strong>, which first aligns the sensory streams with the frozen pretrained VLA and then jointly fine-tunes all components for coordinated control. In addition, an auxiliary <strong>future physical-signal prediction objective</strong> encourages the model to internalize contact dynamics, allowing heterogeneous sensory inputs to be combined in a synergistic and scalable manner.
+          </p>
+        </div>
+        <figure class="image method-image">
+          <img src="./static/images/method.png" alt="MoSS method overview">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="results">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Results</h2>
+    <p class="results-intro has-text-centered">
+      We present real-robot demonstrations for each task. Use the dropdown menu to select different task variants.
+    </p>
+
+    <!-- Task A: Unstack Cup -->
+    <div class="task-card">
+      <div class="task-header">
+        <span class="task-badge">Task A</span>
+        <span class="task-name">Unstack Cup</span>
+      </div>
+      <div class="task-instruction">
+        <span class="instruction-label">Instruction</span>
+        <span class="instruction-text">"Pick up the top red cup from the stack and place it next to the blue cup."</span>
+      </div>
+      <div class="task-variant">
+        <label>Select Variant:</label>
+        <select class="variant-select">
+          <option data-fail="./videos/gripper_unstack_cup/small_cup_fail.mp4"
+                  data-success="./videos/gripper_unstack_cup/small_cup_success.mp4">Small Cup</option>
+          <option data-fail="./videos/gripper_unstack_cup/big_fail_2cups.mp4"
+                  data-success="./videos/gripper_unstack_cup/big_success.mp4">Big Cup</option>
+        </select>
+      </div>
+      <div class="task-videos">
+        <div class="video-block">
+          <video class="video-fail" controls muted loop playsinline preload="metadata"
+                 src="./videos/gripper_unstack_cup/small_cup_fail.mp4"></video>
+          <p class="video-caption fail">GR00T N1.5 (Failure)</p>
+        </div>
+        <div class="video-block">
+          <video class="video-success" controls muted loop playsinline preload="metadata"
+                 src="./videos/gripper_unstack_cup/small_cup_success.mp4"></video>
+          <p class="video-caption success">GR00T N1.5 + MoSS (Ours; Success)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task B: PnP Egg -->
+    <div class="task-card">
+      <div class="task-header">
+        <span class="task-badge">Task B</span>
+        <span class="task-name">PnP Egg</span>
+      </div>
+      <div class="task-instruction">
+        <span class="instruction-label">Instruction</span>
+        <span class="instruction-text">"Pick up the egg and place it in the gold bowl."</span>
+      </div>
+      <div class="task-variant">
+        <label>Select Variant:</label>
+        <select class="variant-select">
+          <option data-fail="./videos/egg/egg_fail_crashed.mp4"
+                  data-success="./videos/egg/egg_success.mp4">Random Position</option>
+        </select>
+      </div>
+      <div class="task-videos">
+        <div class="video-block">
+          <video class="video-fail" controls muted loop playsinline preload="metadata"
+                 src="./videos/egg/egg_fail_crashed.mp4"></video>
+          <p class="video-caption fail">GR00T N1.5 (Failure)</p>
+        </div>
+        <div class="video-block">
+          <video class="video-success" controls muted loop playsinline preload="metadata"
+                 src="./videos/egg/egg_success.mp4"></video>
+          <p class="video-caption success">GR00T N1.5 + MoSS (Ours; Success)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task C: Board Erase -->
+    <div class="task-card">
+      <div class="task-header">
+        <span class="task-badge">Task C</span>
+        <span class="task-name">Board Erase</span>
+      </div>
+      <div class="task-instruction">
+        <span class="instruction-label">Instruction</span>
+        <span class="instruction-text">"Use the (red/grey) eraser to clean the whiteboard."</span>
+      </div>
+      <div class="task-variant">
+        <label>Select Variant:</label>
+        <select class="variant-select">
+          <option data-fail="./videos/board_erase/high_fail.mp4"
+                  data-success="./videos/board_erase/high_success.mp4">High Position</option>
+          <option data-fail="./videos/board_erase/low_fail.mp4"
+                  data-success="./videos/board_erase/low_success.mp4">Low Position</option>
+        </select>
+      </div>
+      <div class="task-videos">
+        <div class="video-block">
+          <video class="video-fail" controls muted loop playsinline preload="metadata"
+                 src="./videos/board_erase/high_fail.mp4"></video>
+          <p class="video-caption fail">GR00T N1.5 (Failure)</p>
+        </div>
+        <div class="video-block">
+          <video class="video-success" controls muted loop playsinline preload="metadata"
+                 src="./videos/board_erase/high_success.mp4"></video>
+          <p class="video-caption success">GR00T N1.5 + MoSS (Ours; Success)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task D: Plug Insertion -->
+    <div class="task-card">
+      <div class="task-header">
+        <span class="task-badge">Task D</span>
+        <span class="task-name">Plug Insertion</span>
+      </div>
+      <div class="task-instruction">
+        <span class="instruction-label">Instruction</span>
+        <span class="instruction-text">"Pick up the (yellow/white/black) charger and plug it into the socket."</span>
+      </div>
+      <div class="task-variant">
+        <label>Select Variant:</label>
+        <select class="variant-select">
+          <option data-fail="./videos/gripper_plug_insertion/yellow_plug_fail.mp4"
+                  data-success="./videos/gripper_plug_insertion/yellow_plug_success.mp4">Yellow Plug</option>
+          <option data-fail="./videos/gripper_plug_insertion/white_plug_fail.mp4"
+                  data-success="./videos/gripper_plug_insertion/white_plug_success.mp4">White Plug</option>
+          <option data-fail="./videos/gripper_plug_insertion/black_plug_fail.mp4"
+                  data-success="./videos/gripper_plug_insertion/black_plug_success.mp4">Black Plug</option>
+        </select>
+      </div>
+      <div class="task-videos">
+        <div class="video-block">
+          <video class="video-fail" controls muted loop playsinline preload="metadata"
+                 src="./videos/gripper_plug_insertion/yellow_plug_fail.mp4"></video>
+          <p class="video-caption fail">GR00T N1.5 (Failure)</p>
+        </div>
+        <div class="video-block">
+          <video class="video-success" controls muted loop playsinline preload="metadata"
+                 src="./videos/gripper_plug_insertion/yellow_plug_success.mp4"></video>
+          <p class="video-caption success">GR00T N1.5 + MoSS (Ours; Success)</p>
         </div>
       </div>
     </div>

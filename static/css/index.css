@@ -155,3 +155,184 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+
+/* TL;DR */
+.tldr {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #5a9b9d;
+  background: #f4f9f9;
+  border-radius: 4px;
+  text-align: left;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.tldr strong {
+  color: #2c5d7a;
+}
+
+/* Overview / Method images */
+.overview-section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.overview-image,
+.method-image {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.method-image {
+  margin-top: 1.5rem;
+}
+
+.overview-image img,
+.method-image img {
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Results — task cards */
+.results-intro {
+  margin-bottom: 2.5rem;
+  color: #555;
+  font-size: 1.05rem;
+}
+
+.task-card {
+  margin-bottom: 3rem;
+}
+
+.task-header {
+  background: #5a9b9d;
+  color: white;
+  padding: 0.85rem 1.25rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: 'Google Sans', sans-serif;
+  margin-bottom: 0.65rem;
+  border-left: 5px solid #3f7d7f;
+}
+
+.task-badge {
+  background: rgba(255, 255, 255, 0.22);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.task-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.task-instruction {
+  background: #e8f0f7;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.65rem;
+  border-left: 5px solid #6e9bbf;
+}
+
+.instruction-label {
+  background: #cfe0ec;
+  color: #2c5d7a;
+  padding: 0.2rem 0.75rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  font-family: 'Google Sans', sans-serif;
+}
+
+.instruction-text {
+  color: #2c5d7a;
+  font-weight: 700;
+}
+
+.task-variant {
+  background: #f0f5e8;
+  padding: 0.75rem 1.1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border: 1px solid #d8e3c2;
+  margin-bottom: 1rem;
+}
+
+.task-variant label {
+  color: #4a6b2a;
+  font-weight: 700;
+  font-family: 'Google Sans', sans-serif;
+}
+
+.variant-select {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #4a6b2a;
+  border-radius: 5px;
+  background: white;
+  color: #4a6b2a;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.task-videos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.video-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-block video {
+  width: 100%;
+  border-radius: 6px;
+  background: black;
+  display: block;
+}
+
+.video-caption {
+  margin-top: 0.6rem;
+  font-weight: 600;
+  font-family: 'Google Sans', sans-serif;
+  text-align: center;
+}
+
+.video-caption.fail {
+  color: #c0392b;
+}
+
+.video-caption.success {
+  color: #2e7d32;
+}
+
+@media (max-width: 768px) {
+  .task-videos {
+    grid-template-columns: 1fr;
+  }
+
+  .task-instruction {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

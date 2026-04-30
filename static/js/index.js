@@ -75,4 +75,17 @@ $(document).ready(function() {
 
     bulmaSlider.attach();
 
+    document.querySelectorAll('.variant-select').forEach(function(select) {
+      select.addEventListener('change', function() {
+        var opt = select.options[select.selectedIndex];
+        var card = select.closest('.task-card');
+        var failVideo = card.querySelector('.video-fail');
+        var successVideo = card.querySelector('.video-success');
+        failVideo.src = opt.dataset.fail;
+        successVideo.src = opt.dataset.success;
+        failVideo.load();
+        successVideo.load();
+      });
+    });
+
 })
