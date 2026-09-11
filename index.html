@@ -45,7 +45,7 @@
               <a href="https://myungkyukoo.github.io/">Myungkyu Koo</a><sup>1,2</sup>,
             </span>
             <span class="author-block">
-              Jungwoo Park<sup>3</sup>,
+              Jungwoo Park<sup>1</sup>,
             </span>
             <span class="author-block">
               <a href="https://alinlab.kaist.ac.kr/shin.html">Jinwoo Shin</a><sup>1,2</sup>
@@ -54,8 +54,7 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>KAIST,</span>
-            <span class="author-block"><sup>2</sup>RLWRLD,</span>
-            <span class="author-block"><sup>3</sup>Seoul National University</span>
+            <span class="author-block"><sup>2</sup>RLWRLD</span>
           </div>
 
           <div class="column has-text-centered">
@@ -155,10 +154,11 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Results</h2>
     <p class="results-intro has-text-centered">
-      We present real-robot demonstrations for each task. Use the dropdown menu to select different task variants.
+      We present real-robot demonstrations for each task. Click a variant to switch the videos below.
     </p>
 
-    <!-- Task A: Unstack Cup -->
+    <h3 class="platform-header">Platform I — Single Arm + Parallel Gripper</h3>
+
     <div class="task-card">
       <div class="task-header">
         <span class="task-badge">Task A</span>
@@ -169,13 +169,15 @@
         <span class="instruction-text">"Pick up the top red cup from the stack and place it next to the blue cup."</span>
       </div>
       <div class="task-variant">
-        <label>Select Variant:</label>
-        <select class="variant-select">
-          <option data-fail="./videos/gripper_unstack_cup/small_cup_fail.mp4"
-                  data-success="./videos/gripper_unstack_cup/small_cup_success.mp4">Small Cup</option>
-          <option data-fail="./videos/gripper_unstack_cup/big_fail_2cups.mp4"
-                  data-success="./videos/gripper_unstack_cup/big_success.mp4">Big Cup</option>
-        </select>
+        <span class="variant-label">Variant</span>
+        <div class="variant-options">
+          <button type="button" class="variant-btn is-active"
+                  data-fail="./videos/gripper_unstack_cup/small_cup_fail.mp4"
+                  data-success="./videos/gripper_unstack_cup/small_cup_success.mp4">Small Cup</button>
+          <button type="button" class="variant-btn"
+                  data-fail="./videos/gripper_unstack_cup/big_fail_2cups.mp4"
+                  data-success="./videos/gripper_unstack_cup/big_success.mp4">Big Cup</button>
+        </div>
       </div>
       <div class="task-videos">
         <div class="video-block">
@@ -191,7 +193,6 @@
       </div>
     </div>
 
-    <!-- Task B: PnP Egg -->
     <div class="task-card">
       <div class="task-header">
         <span class="task-badge">Task B</span>
@@ -202,11 +203,12 @@
         <span class="instruction-text">"Pick up the egg and place it in the gold bowl."</span>
       </div>
       <div class="task-variant">
-        <label>Select Variant:</label>
-        <select class="variant-select">
-          <option data-fail="./videos/egg/egg_fail_crashed.mp4"
-                  data-success="./videos/egg/egg_success.mp4">Random Position</option>
-        </select>
+        <span class="variant-label">Variant</span>
+        <div class="variant-options">
+          <button type="button" class="variant-btn is-active"
+                  data-fail="./videos/egg/egg_fail_crashed.mp4"
+                  data-success="./videos/egg/egg_success.mp4">Random Position</button>
+        </div>
       </div>
       <div class="task-videos">
         <div class="video-block">
@@ -222,7 +224,6 @@
       </div>
     </div>
 
-    <!-- Task C: Board Erase -->
     <div class="task-card">
       <div class="task-header">
         <span class="task-badge">Task C</span>
@@ -233,13 +234,15 @@
         <span class="instruction-text">"Use the (red/grey) eraser to clean the whiteboard."</span>
       </div>
       <div class="task-variant">
-        <label>Select Variant:</label>
-        <select class="variant-select">
-          <option data-fail="./videos/board_erase/high_fail.mp4"
-                  data-success="./videos/board_erase/high_success.mp4">High Position</option>
-          <option data-fail="./videos/board_erase/low_fail.mp4"
-                  data-success="./videos/board_erase/low_success.mp4">Low Position</option>
-        </select>
+        <span class="variant-label">Variant</span>
+        <div class="variant-options">
+          <button type="button" class="variant-btn is-active"
+                  data-fail="./videos/board_erase/high_fail.mp4"
+                  data-success="./videos/board_erase/high_success.mp4">High Position</button>
+          <button type="button" class="variant-btn"
+                  data-fail="./videos/board_erase/low_fail.mp4"
+                  data-success="./videos/board_erase/low_success.mp4">Low Position</button>
+        </div>
       </div>
       <div class="task-videos">
         <div class="video-block">
@@ -255,7 +258,6 @@
       </div>
     </div>
 
-    <!-- Task D: Plug Insertion -->
     <div class="task-card">
       <div class="task-header">
         <span class="task-badge">Task D</span>
@@ -266,15 +268,18 @@
         <span class="instruction-text">"Pick up the (yellow/white/black) charger and plug it into the socket."</span>
       </div>
       <div class="task-variant">
-        <label>Select Variant:</label>
-        <select class="variant-select">
-          <option data-fail="./videos/gripper_plug_insertion/yellow_plug_fail.mp4"
-                  data-success="./videos/gripper_plug_insertion/yellow_plug_success.mp4">Yellow Plug</option>
-          <option data-fail="./videos/gripper_plug_insertion/white_plug_fail.mp4"
-                  data-success="./videos/gripper_plug_insertion/white_plug_success.mp4">White Plug</option>
-          <option data-fail="./videos/gripper_plug_insertion/black_plug_fail.mp4"
-                  data-success="./videos/gripper_plug_insertion/black_plug_success.mp4">Black Plug</option>
-        </select>
+        <span class="variant-label">Variant</span>
+        <div class="variant-options">
+          <button type="button" class="variant-btn is-active"
+                  data-fail="./videos/gripper_plug_insertion/yellow_plug_fail.mp4"
+                  data-success="./videos/gripper_plug_insertion/yellow_plug_success.mp4">Yellow Plug</button>
+          <button type="button" class="variant-btn"
+                  data-fail="./videos/gripper_plug_insertion/white_plug_fail.mp4"
+                  data-success="./videos/gripper_plug_insertion/white_plug_success.mp4">White Plug</button>
+          <button type="button" class="variant-btn"
+                  data-fail="./videos/gripper_plug_insertion/black_plug_fail.mp4"
+                  data-success="./videos/gripper_plug_insertion/black_plug_success.mp4">Black Plug</button>
+        </div>
       </div>
       <div class="task-videos">
         <div class="video-block">
@@ -285,6 +290,91 @@
         <div class="video-block">
           <video class="video-success" controls muted loop playsinline preload="metadata"
                  src="./videos/gripper_plug_insertion/yellow_plug_success.mp4"></video>
+          <p class="video-caption success">GR00T N1.5 + MoSS (Ours; Success)</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="platform-header">Platform II — Dual OpenArm + RH56F1 Hands</h3>
+
+    <div class="task-card">
+      <div class="task-header">
+        <span class="task-badge">Task E</span>
+        <span class="task-name">Pick Paper</span>
+      </div>
+      <div class="task-instruction">
+        <span class="instruction-label">Instruction</span>
+        <span class="instruction-text">"Pick up the paper (napkin)."</span>
+      </div>
+      <div class="task-variant">
+        <span class="variant-label">Variant</span>
+        <div class="variant-options">
+          <button type="button" class="variant-btn is-active"
+                  data-fail="./videos/pick_paper/pick_paper_yellow_lower_failure.mp4"
+                  data-success="./videos/pick_paper/pick_paper_yellow_lower_success.mp4">Yellow Paper on Lower Table</button>
+          <button type="button" class="variant-btn"
+                  data-fail="./videos/pick_paper/pick_paper_yellow_higher_failure.mp4"
+                  data-success="./videos/pick_paper/pick_paper_yellow_higher_success.mp4">Yellow Paper on Higher Table</button>
+          <button type="button" class="variant-btn"
+                  data-fail="./videos/pick_paper/pick_paper_white_lower_failure.mp4"
+                  data-success="./videos/pick_paper/pick_paper_white_lower_success.mp4">White Paper on Lower Table</button>
+          <button type="button" class="variant-btn"
+                  data-fail="./videos/pick_paper/pick_paper_white_higher_failure.mp4"
+                  data-success="./videos/pick_paper/pick_paper_white_higher_success.mp4">White Paper on Higher Table</button>
+          <button type="button" class="variant-btn"
+                  data-fail="./videos/pick_paper/pick_paper_napkin_lower_failure.mp4"
+                  data-success="./videos/pick_paper/pick_paper_napkin_lower_success.mp4">Napkin on Lower Table</button>
+          <button type="button" class="variant-btn"
+                  data-fail="./videos/pick_paper/pick_paper_napkin_higher_failure.mp4"
+                  data-success="./videos/pick_paper/pick_paper_napkin_higher_success.mp4">Napkin on Higher Table</button>
+        </div>
+      </div>
+      <div class="task-videos">
+        <div class="video-block">
+          <video class="video-fail" controls muted loop playsinline preload="metadata"
+                 src="./videos/pick_paper/pick_paper_yellow_lower_failure.mp4"></video>
+          <p class="video-caption fail">GR00T N1.5 (Failure)</p>
+        </div>
+        <div class="video-block">
+          <video class="video-success" controls muted loop playsinline preload="metadata"
+                 src="./videos/pick_paper/pick_paper_yellow_lower_success.mp4"></video>
+          <p class="video-caption success">GR00T N1.5 + MoSS (Ours; Success)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="task-card">
+      <div class="task-header">
+        <span class="task-badge">Task F</span>
+        <span class="task-name">Sort by Weight</span>
+      </div>
+      <div class="task-instruction">
+        <span class="instruction-label">Instruction</span>
+        <span class="instruction-text">"Place the bag on the right if heavy, and on the left if light."</span>
+      </div>
+      <div class="task-variant">
+        <span class="variant-label">Variant</span>
+        <div class="variant-options">
+          <button type="button" class="variant-btn is-active"
+                  data-fail="./videos/sort_by_weight/sort_weight_empty_failure.mp4"
+                  data-success="./videos/sort_by_weight/sort_weight_empty_success.mp4">Empty Bag</button>
+          <button type="button" class="variant-btn"
+                  data-fail="./videos/sort_by_weight/sort_weight_1juice_failure.mp4"
+                  data-success="./videos/sort_by_weight/sort_weight_1juice_success.mp4">Bag with 1 Juice</button>
+          <button type="button" class="variant-btn"
+                  data-fail="./videos/sort_by_weight/sort_weight_2juice_failure.mp4"
+                  data-success="./videos/sort_by_weight/sort_weight_2juice_success.mp4">Bag with 2 Juices</button>
+        </div>
+      </div>
+      <div class="task-videos">
+        <div class="video-block">
+          <video class="video-fail" controls muted loop playsinline preload="metadata"
+                 src="./videos/sort_by_weight/sort_weight_empty_failure.mp4"></video>
+          <p class="video-caption fail">GR00T N1.5 (Failure)</p>
+        </div>
+        <div class="video-block">
+          <video class="video-success" controls muted loop playsinline preload="metadata"
+                 src="./videos/sort_by_weight/sort_weight_empty_success.mp4"></video>
           <p class="video-caption success">GR00T N1.5 + MoSS (Ours; Success)</p>
         </div>
       </div>

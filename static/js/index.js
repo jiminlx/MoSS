@@ -75,16 +75,53 @@ $(document).ready(function() {
 
     bulmaSlider.attach();
 
-    document.querySelectorAll('.variant-select').forEach(function(select) {
-      select.addEventListener('change', function() {
-        var opt = select.options[select.selectedIndex];
-        var card = select.closest('.task-card');
+    // --- Results: variant pills + autoplay ---------------------------------
+
+    function playVideo(v) {
+      var p = v.play();
+      if (p && typeof p.catch === 'function') { p.catch(function() {}); }
+    }
+
+    // Autoplay videos while they are on screen, pause them when they scroll away.
+    var taskVideos = document.querySelectorAll('.task-videos video');
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          var v = entry.target;
+          if (entry.isIntersecting) {
+            v.dataset.visible = '1';
+            playVideo(v);
+          } else {
+            v.dataset.visible = '';
+            v.pause();
+          }
+        });
+      }, { threshold: 0.35 });
+      taskVideos.forEach(function(v) { observer.observe(v); });
+    } else {
+      taskVideos.forEach(function(v) { v.dataset.visible = '1'; playVideo(v); });
+    }
+
+    document.querySelectorAll('.variant-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var card = btn.closest('.task-card');
+        card.querySelectorAll('.variant-btn').forEach(function(b) {
+          b.classList.remove('is-active');
+        });
+        btn.classList.add('is-active');
+
         var failVideo = card.querySelector('.video-fail');
         var successVideo = card.querySelector('.video-success');
-        failVideo.src = opt.dataset.fail;
-        successVideo.src = opt.dataset.success;
-        failVideo.load();
-        successVideo.load();
+        [[failVideo, btn.dataset.fail], [successVideo, btn.dataset.success]].forEach(function(pair) {
+          var v = pair[0], src = pair[1];
+          if (!v || v.getAttribute('src') === src) { playVideo(v); return; }
+          v.setAttribute('src', src);
+          v.load();
+          v.addEventListener('loadeddata', function once() {
+            v.removeEventListener('loadeddata', once);
+            playVideo(v);
+          });
+        });
       });
     });
 
