@@ -157,9 +157,30 @@ body {
 }
 
 
+/* Venue */
+.publication-venue-line {
+  margin-top: 0.85rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.venue-badge {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #3f7d7f;
+  letter-spacing: 0.01em;
+}
+
+/* Spacing between the venue line and the link buttons */
+.publication-venue-line + .column {
+  padding-top: 0.85rem;
+  padding-bottom: 0;
+}
+
 /* TL;DR */
 .tldr {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   padding: 1rem 1.5rem;
   border-left: 4px solid #5a9b9d;
   background: #f4f9f9;
