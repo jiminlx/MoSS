@@ -168,7 +168,7 @@ body {
   font-family: 'Google Sans', sans-serif;
   font-size: 1.45rem;
   font-weight: 700;
-  color: #3f7d7f;
+  color: #c0392b;
   letter-spacing: 0.01em;
 }
 
@@ -401,4 +401,10 @@ body {
     align-items: flex-start;
     gap: 0.5rem;
   }
+}
+
+/* Visitor counter */
+.hits-badge {
+  text-align: right;
+  line-height: 0;
 }
